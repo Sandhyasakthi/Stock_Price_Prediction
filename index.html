@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stock Forecast Dashboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="app-shell">
+  <section class="top-bar">
+    <h1>Stock Forecast Dashboard</h1>
+    <div class="search-box">
+      <input id="ticker" placeholder="Enter ticker (AAPL)" />
+      <button id="predictBtn" onclick="predict()">Analyze</button>
+    </div>
+  </section>
+
+  <p id="output" class="status">Enter a ticker and click Analyze.</p>
+
+  <section class="kpi-grid">
+    <article class="kpi-card">
+      <h3>Latest Close</h3>
+      <p id="latestClose">-</p>
+    </article>
+    <article class="kpi-card">
+      <h3>Predicted 5D Close</h3>
+      <p id="predictedClose">-</p>
+    </article>
+    <article class="kpi-card">
+      <h3>5D Trend</h3>
+      <p id="trend5d">-</p>
+    </article>
+    <article class="kpi-card">
+      <h3>30D Volatility</h3>
+      <p id="volatility">-</p>
+    </article>
+    <article class="kpi-card">
+      <h3>MA10 / MA50</h3>
+      <p id="movingAverages">-</p>
+    </article>
+    <article class="kpi-card">
+      <h3>RSI</h3>
+      <p id="rsi">-</p>
+    </article>
+    <article class="kpi-card">
+      <h3>Backtest MAE</h3>
+      <p id="backtestMae">-</p>
+    </article>
+    <article class="kpi-card">
+      <h3>Backtest MAPE</h3>
+      <p id="backtestMape">-</p>
+    </article>
+  </section>
+
+  <section class="panel">
+    <h2>Price History + 5-Day Forecast</h2>
+    <canvas id="chart"></canvas>
+  </section>
+
+  <section class="panel">
+    <h2>Forecast Values</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Predicted Close</th>
+        </tr>
+      </thead>
+      <tbody id="forecastRows"></tbody>
+    </table>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
